@@ -1,3 +1,7 @@
+Autor: Alejandra Mollecker
+
+Curso: Herramientas básicas para el Análisis de Datos
+
 # Análisis Exploratorio de Datos - Cuba 7076
 
 Proyecto de análisis exploratorio de datos (EDA) para el monitoreo de variables operativas e industriales en la cuba de producción C7076 durante un período de 3 meses.
