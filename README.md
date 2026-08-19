@@ -2,32 +2,78 @@ Autor: Alejandra Mollecker
 
 Curso: Herramientas básicas para el Análisis de Datos
 
-# Análisis Exploratorio de Datos - Cuba 7076
+# 📊 Tablero de Monitoreo de principales variables de Sala 5
 
-Proyecto de análisis exploratorio de datos (EDA) para el monitoreo de variables operativas e industriales en la cuba de producción C7076 durante un período de 3 meses.
+Este repositorio contiene el análisis y monitoreo operativo de las celdas de electrólisis (**cubas**) correspondientes a la **Sala 5 / Serie C**.
 
-## Descripción del Proyecto
+---
 
-Este proyecto contiene un flujo de trabajo en Python desarrollado para procesar y analizar mediciones temporales de la cuba 7076. El dataset abarca 179 variables operativas (temperatura, tensión, energía, insumos químicos, etc.) registradas por turnos y semi-turnos.
+## 🚀 Resumen Ejecutivo
 
-Objetivos principales:
-- Carga y limpieza: Lectura adecuada del archivo CSV con delimitador de punto y coma ';'.
-- Exploración de dimensiones y tipos de datos: Inspección inicial del volumen de datos (729 registros) y sus tipos de datos.
-- Estadística descriptiva: Análisis de promedios, desviaciones estándar, mínimos y máximos de variables críticas.
-- Visualización de datos: Análisis de distribución de variables clave (como la temperatura TFE).
+El dataset analiza **51,293 registros operativos** distribuidos en **67 variables** técnicas, eléctricas y fisicoquímicas, monitoreadas a lo largo de **72 celdas únicas** (IDs 501 a 572).
 
-## Requisitos e Instalación
+---
 
-Para ejecutar este cuaderno se requieren las siguientes librerías de Python:
+## 📌 Metadatos Principales del Dataset
 
-pip install pandas matplotlib seaborn plotly
+| Métrica / Parámetro | Valor Registrado |
+| :--- | :--- |
+| **Total de Registros (Filas)** | 51,293 |
+| **Total de Variables (Columnas)** | 67 |
+| **Rango Temporal de Monitoreo** | 17/04/2026 – 15/08/2026 |
+| **Serie / Unidades Evaluadas** | Serie C (72 Cubas únicas: IDs 501 a 572) |
 
-## Estructura del Dataset (Practica C7076.csv)
+---
 
-- Registros (Filas): 729 entradas correspondientes a semi-turnos operativos.
-- Variables (Columnas): 179 columnas con información técnica, entre las que destacan:
-  * FT_TURNO / TU_SEMI_TURNO: Identificadores temporales y de turno.
-  * CUBA: Identificador del equipo (7076).
-  * TFE: Temperatura registrada.
-  * V_ULT_V, V_ULT_TI, V_ULT_GA: Variables operativas de voltaje, tiempo y gas.
-  * Insumos y aditivos (ALF3, AMCRY, etc.).
+## 🏭 Distribución por Modelo de Cuba (`X_MODELO`)
+
+| Modelo de Cuba | Cantidad de Registros | Porcentaje (%) |
+| :--- | :---: | :---: |
+| **AP22.0** | 39,484 | 76.98% |
+| **al23** | 8,734 | 17.03% |
+| **al23.1** | 3,075 | 5.99% |
+| **Total** | **51,293** | **100.00%** |
+
+---
+
+## 🔍 Categorización de Variables Principales
+
+Las variables contenidas en el tablero se agrupan funcionalmente en las siguientes dimensiones operativas:
+
+1. **Identificación y Control Temporal:**
+   - `CUBA`, `Fecha`, `FT_TURNO`, `TU_SEMI_TURNO`, `TURNO`, `N_VIDA`, `X_MODELO`, `C_SERIE`
+
+2. **Variables Fisicoquímicas y Baño:**
+   - `%Al2O3`, `CaF2`, `T Liq` *(Temperatura Liquidus)*, `SH` *(Superheat / Sobrecalentamiento)*, `ALF3`, `ALF3C`, `CAF2`, `CAF2D`
+
+3. **Parámetros Eléctricos y Operativos:**
+   - `POTSTATE`, `IPS`, `V_ACD`, `V_TFLUO`, `V_ULT_CU`, `V_APARTAMIENTO`, `ENERGIA_EA`, `MI_EA`, `SMRWFC`
+
+4. **Niveles y Alturas de Capa:**
+   - `HB` *(Altura de Baño)*, `HBC`, `HBD`, `HM` *(Altura de Metal)*, `HMC`, `HMD`, `MBLTHE`, `MMTHE`
+
+5. **Adiciones y Alimentación:**
+   - `AMALF3`, `AMNA2CO3`, `MTALF3`, `NDAL2O3`, `NDALF3`, `NTEA`, `PEV`, `SOUSAL`
+
+6. **Temperaturas y Variables de Salida:**
+   - `TBC`, `TBD`, `TFOIN`, `TFAIN`, `TFED`, `TSID`, `RTH`, `RUCC`, `RUCD`, `SEA`
+
+---
+
+## 🛠️ Requisitos e Instalación
+
+Para explorar o procesar este dataset localmente mediante Python:
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/tu-usuario/tu-repositorio.git
+
+# Entrar al directorio
+cd tu-repositorio
+
+# Instalar dependencias necesarias
+pip install pandas numpy matplotlib seaborn
+```
+
+---
+*Documentación generada automáticamente para el seguimiento operativo de Sala 5.*
